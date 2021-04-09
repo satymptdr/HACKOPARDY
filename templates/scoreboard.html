@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>HACKOPARDY</title>
+    </head>
+    <body>
+        <h2>ROOM CODE : #24512</h2>
+        <h2>ROOM NAME : hack36</h2>
+        <h2>Scoreboard</h2>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Scores</th>
+            </tr>
+            <tr>
+                <td>User01</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>User02</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>User03</td>
+                <td>1500</td>
+            </tr>
+            <tr>
+                <td>User04</td>
+                <td>1600(Winner)</td>
+            </tr>
+        </table>
+
+        <a href="{% url 'room:lobby' %}">Go back to lobby</a>
+        <a href="{% url 'room:index' %}">Leave Room</a>
+    </body>
+</html>

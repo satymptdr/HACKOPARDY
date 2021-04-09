@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>HACKOPARDY</title>
+    </head>
+    <body>
+        <h2>Welcome to HACKOPARDY</h2>
+        <h4>This is a fun quiz game</h4>
+        <p>type /create_game to go to create game page</p>
+        <p>type /join_game to go to join game page</p>
+        <a href="{% url 'room:create_game' %}">Create Game</a>
+        <a href="{% url 'room:join_game' %}">Join Game</a>
+    </body>
+</html>
