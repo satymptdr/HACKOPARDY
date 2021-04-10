@@ -1,14 +1,24 @@
 <html>
     <head>
         <title>HACKOPARDY</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     </head>
     <body>
         <h2>CREATE GAME ROOM</h2>
-        
-        <form action="POST">
-            Username <input type="text" placeholder="Enter Username"/>
-            Room_name <input type="text" placeholder="Enter Room_name">
-            <input type="submit" value="create">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-light">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            Username <input type="text" name="username" placeholder="Enter Username"/>
+            Room_Code <input type="text" name="room_code" placeholder="Enter Room_Code">
+            <button type="submit" class="btn btn-light">Create</button>
         </form>
     </body>
 </html>
