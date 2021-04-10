@@ -1,10 +1,158 @@
-<html>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>HACKOPARDY</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Selecao - v4.1.0
+  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1><a href="{% url 'room:index' %}">HackoPardy</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+        <div id="heroCarousel" data-bs-interval=" 5000" class="container carousel carousel-fade"
+            data-bs-ride="carousel">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                   
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Room Code : {{ room_code }}</span>
+                        
+                    </div>
+                   
+                    <table class="table table-dark table-striped">
+                        <table class="table table-dark table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">UserName</th>
+                                
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                              
+                                {% for room_user in room_users %}
+                                <tr>
+                                    <th scope="row">{{ forloop.counter }}</th>
+                                    <td>{{ room_user.room_user }}</td>
+                                </tr>
+                                {% endfor %}  
+                                
+                            </tbody>
+                            </table>
+                    </table>
+                    
+                    <div>
+                        {% if username == room_host %}
+                        
+                        <form method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-get-started animate_animated animate_fadeInUp scrollto">Start</button>
+                        </form>
+                        
+                        {% endif %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+            </g>
+        </svg>
+
+    </section><!-- End Hero -->
+    
+    <main id="main">
+        <main id="main">
+
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                    class="bi bi-arrow-up-short"></i></a>
+
+            <!-- Vendor JS Files -->
+            <script src="{% static 'vendor/aos/aos.js' %}"></script>
+            <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+            <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+            <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+            <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+            <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+            <!-- Template Main JS File -->
+            <script src="{% static 'js/main.js' %}"></script>
+
+            
+</body>
+
+</html>
+
+<!-- <html>
     <head>
         <title>HACKOPARDY</title>
     </head>
     <body>
         <h2>ROOM CODE : {{ room_code }}</h2>
-        <!-- <h2>ROOM NAME : hack36</h2> -->
+        <h2>ROOM NAME : hack36</h2>
         <table>
             <tr>
                 <th>Serial</th>
@@ -22,4 +170,5 @@
             <input type="submit" value="Start">
         {% endif %}
     </body>
-</html>
+    
+</html> -->
